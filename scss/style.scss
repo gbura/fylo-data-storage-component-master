@@ -1,0 +1,203 @@
+@use 'colors' as *;
+
+*,
+::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.6rem;
+	font-family: 'Raleway', sans-serif;
+	min-height: 100vh;
+	background-image: url(../images/bg-mobile.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.main {
+	.fylo-card {
+		width: 320px;
+		height: 200px;
+		background-color: $d-blue;
+		border-radius: 10px 100px 10px 10px;
+
+		&__logo {
+			margin-left: 4rem;
+			margin-top: 4rem;
+		}
+
+		.icons {
+			margin-left: 4rem;
+			margin-top: 3rem;
+			display: flex;
+			gap: 1.5rem;
+
+			&__icon {
+				padding: 1.2rem;
+				border-radius: 10px;
+				background-color: $vd-blue;
+			}
+		}
+	}
+
+	.storage-card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 320px;
+		height: 180px;
+		margin-top: 2rem;
+		background-color: $d-blue;
+		border-radius: 10px;
+
+		&__text {
+			margin-top: 3rem;
+			font-size: 1.4rem;
+			color: $l-white;
+		}
+
+		&__span {
+			font-weight: 700;
+		}
+
+		&__disk-space {
+			position: relative;
+			width: 85%;
+			height: 20px;
+			margin-top: 1.5rem;
+			background-color: $vdl-blue;
+			border-radius: 10px;
+
+			&::before {
+				position: absolute;
+				content: '';
+				top: 0.35rem;
+				left: 0.35rem;
+				width: 75%;
+				height: 70%;
+				border-radius: 10px;
+				background: linear-gradient(to right, hsl(6, 100%, 80%) 10%, hsl(335, 100%, 65%) 80%);
+			}
+
+			&::after {
+				position: absolute;
+				content: '';
+				top: 0.3rem;
+				left: 71%;
+				height: 14px;
+				width: 14px;
+				background-color: $white;
+				border-radius: 50%;
+			}
+		}
+
+		.space {
+			display: flex;
+			flex-direction: row;
+			gap: 18rem;
+			margin-top: 1rem;
+
+			&__item {
+				color: $l-white;
+				font-size: 1.4rem;
+				font-weight: 700;
+			}
+		}
+	}
+
+	.space-left {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: -3.5rem auto 0;
+		background-color: $l-white;
+		padding: 1.5rem 2rem;
+		border-radius: 10px;
+		width: 60%;
+
+		&__text {
+			color: $g-blue;
+			font-weight: 700;
+			font-size: 1.4rem;
+		}
+
+		&__span {
+			font-size: 4rem;
+			color: $vd-blue;
+		}
+	}
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+}
+
+@media (min-width: 1440px) {
+	body {
+		background-color: $vd-blue;
+		background-image: url(../images/bg-desktop.png);
+		background-size: contain;
+		background-position: bottom;
+	}
+
+	.main {
+		position: relative;
+
+		.container {
+			display: flex;
+			gap: 2rem;
+
+			.storage-card {
+				width: 500px;
+				height: 150px;
+				margin-top: 5rem;
+
+				&__text {
+					margin-left: -20rem;
+				}
+
+				.space {
+					gap: 34rem;
+				}
+
+				&__disk-space {
+					&::after {
+						left: 73%;
+					}
+				}
+			}
+		}
+
+		.space-left {
+			position: absolute;
+			top: 4rem;
+			right: 4rem;
+			width: 20%;
+			height: 70px;
+			$arrow-size: 16px;
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				right: 0;
+				border-top: $arrow-size solid $l-white;
+				border-right: $arrow-size solid $l-white;
+				border-left: $arrow-size solid transparent;
+				border-bottom: $arrow-size solid transparent;
+				bottom: -($arrow-size);
+			}
+		}
+	}
+}

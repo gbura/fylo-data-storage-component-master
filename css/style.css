@@ -1,0 +1,174 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+  font-family: "Raleway", sans-serif;
+  min-height: 100vh;
+  background-image: url(../images/bg-mobile.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.main .fylo-card {
+  width: 320px;
+  height: 200px;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 10px 100px 10px 10px;
+}
+.main .fylo-card__logo {
+  margin-left: 4rem;
+  margin-top: 4rem;
+}
+.main .fylo-card .icons {
+  margin-left: 4rem;
+  margin-top: 3rem;
+  display: flex;
+  gap: 1.5rem;
+}
+.main .fylo-card .icons__icon {
+  padding: 1.2rem;
+  border-radius: 10px;
+  background-color: hsl(229, 57%, 11%);
+}
+.main .storage-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+  height: 180px;
+  margin-top: 2rem;
+  background-color: hsl(228, 56%, 26%);
+  border-radius: 10px;
+}
+.main .storage-card__text {
+  margin-top: 3rem;
+  font-size: 1.4rem;
+  color: hsl(0, 6%, 85%);
+}
+.main .storage-card__span {
+  font-weight: 700;
+}
+.main .storage-card__disk-space {
+  position: relative;
+  width: 85%;
+  height: 20px;
+  margin-top: 1.5rem;
+  background-color: hsla(229, 44%, 17%, 0.699);
+  border-radius: 10px;
+}
+.main .storage-card__disk-space::before {
+  position: absolute;
+  content: "";
+  top: 0.35rem;
+  left: 0.35rem;
+  width: 75%;
+  height: 70%;
+  border-radius: 10px;
+  background: linear-gradient(to right, hsl(6, 100%, 80%) 10%, hsl(335, 100%, 65%) 80%);
+}
+.main .storage-card__disk-space::after {
+  position: absolute;
+  content: "";
+  top: 0.3rem;
+  left: 71%;
+  height: 14px;
+  width: 14px;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+.main .storage-card .space {
+  display: flex;
+  flex-direction: row;
+  gap: 18rem;
+  margin-top: 1rem;
+}
+.main .storage-card .space__item {
+  color: hsl(0, 6%, 85%);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+.main .space-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -3.5rem auto 0;
+  background-color: hsl(0, 6%, 85%);
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  width: 60%;
+}
+.main .space-left__text {
+  color: hsl(229, 7%, 55%);
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+.main .space-left__span {
+  font-size: 4rem;
+  color: hsl(229, 57%, 11%);
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media (min-width: 1440px) {
+  body {
+    background-color: hsl(229, 57%, 11%);
+    background-image: url(../images/bg-desktop.png);
+    background-size: contain;
+    background-position: bottom;
+  }
+  .main {
+    position: relative;
+  }
+  .main .container {
+    display: flex;
+    gap: 2rem;
+  }
+  .main .container .storage-card {
+    width: 500px;
+    height: 150px;
+    margin-top: 5rem;
+  }
+  .main .container .storage-card__text {
+    margin-left: -20rem;
+  }
+  .main .container .storage-card .space {
+    gap: 34rem;
+  }
+  .main .container .storage-card__disk-space::after {
+    left: 73%;
+  }
+  .main .space-left {
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+    width: 20%;
+    height: 70px;
+  }
+  .main .space-left::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: 0;
+    border-top: 16px solid hsl(0, 6%, 85%);
+    border-right: 16px solid hsl(0, 6%, 85%);
+    border-left: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    bottom: -16px;
+  }
+}/*# sourceMappingURL=style.css.map */
